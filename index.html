@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mamma Mia — Zadar | Pizzeria &amp; restoran od 2007.</title>
+<meta name="description" content="Mamma Mia Zadar — omiljena pizzeria i restoran od 2007. Pizza iz krušne peći, domaća pasta i plodovi mora. Preko 1.300 zadovoljnih recenzija. Rezervirajte stol." />
+<link rel="canonical" href="https://artme-nx.github.io/mamma-mia-zadar-v1/" />
+<meta property="og:type" content="restaurant" />
+<meta property="og:locale" content="hr_HR" />
+<meta property="og:site_name" content="Mamma Mia · Zadar" />
+<meta property="og:title" content="Mamma Mia — Zadar | Pizzeria & restoran" />
+<meta property="og:description" content="Pizza iz krušne peći i domaća pasta u srcu Zadra, od 2007." />
+<meta property="og:url" content="https://artme-nx.github.io/mamma-mia-zadar-v1/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=80" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Mamma Mia","servesCuisine":["Italian","Pizza","Pasta","Mediterranean"],"priceRange":"$$","telephone":"+385 23 334 246","email":"mammamiazadar2007@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Zadar","addressCountry":"HR"},"url":"https://artme-nx.github.io/mamma-mia-zadar-v1/","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"1399"},"acceptsReservations":"True"}
+</script>
+<style>
+:root{
+  --paper:#F6EFE2;
+  --paper-2:#EFE6D4;
+  --tomato:#B3402B;       /* suho rajčica / talijanski crveni */
+  --tomato-d:#922f1f;
+  --basil:#4F6B3A;        /* bosiljak */
+  --gold:#C09042;
+  --ink:#241c18;
+  --ink-soft:#5e5247;
+  --line:rgba(36,28,24,.14);
+  --line-d:rgba(246,239,226,.16);
+  --fd:'Bodoni Moda',Georgia,serif;
+  --fb:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--fb);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;}a{color:inherit;text-decoration:none;}
+::selection{background:var(--tomato);color:#fff;}
+.wrap{width:min(1240px,91vw);margin:0 auto;}
+h1,h2,h3{font-family:var(--fd);font-weight:500;line-height:1.05;}
+.it{font-style:italic;}
+.eyebrow{font-family:var(--fb);text-transform:uppercase;font-size:11px;letter-spacing:.26em;color:var(--tomato);font-weight:500;display:inline-block;}
+
+.header{position:fixed;top:0;left:0;width:100%;z-index:120;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(16px,4vw,48px);background:rgba(246,239,226,.8);backdrop-filter:blur(9px);transition:padding .4s,box-shadow .4s;}
+.header.scrolled{padding:11px clamp(16px,4vw,48px);box-shadow:0 1px 0 var(--line);}
+.brand{display:flex;flex-direction:column;line-height:1;}
+.brand .b1{font-family:var(--fd);font-size:26px;font-style:italic;font-weight:500;}
+.brand .b2{font-family:var(--fb);font-size:9px;text-transform:uppercase;letter-spacing:.3em;color:var(--basil);margin-top:4px;}
+.nav{display:flex;gap:28px;align-items:center;}
+.nav a{text-transform:uppercase;font-size:11px;letter-spacing:.16em;color:var(--ink-soft);position:relative;padding:4px 0;transition:color .3s;}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--tomato);transition:width .35s;}
+.nav a:hover{color:var(--ink);}.nav a:hover::after{width:100%;}
+.header-right{display:flex;align-items:center;gap:14px;}
+.lang{display:flex;gap:7px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+.lang a{opacity:.6;transition:.3s;}.lang a.active,.lang a:hover{opacity:1;color:var(--tomato);}.lang span{opacity:.3;}
+.btn{font-family:var(--fb);text-transform:uppercase;font-size:11px;letter-spacing:.16em;background:var(--tomato);color:#fff;border:none;cursor:pointer;padding:12px 22px;border-radius:3px;transition:background .35s,transform .35s;}
+.btn:hover{background:var(--tomato-d);transform:translateY(-1px);}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:130;}
+.burger span{width:26px;height:2px;background:var(--ink);display:block;transition:.35s;}
+.mobile-menu{position:fixed;inset:0;background:var(--paper);z-index:115;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;transform:translateY(-100%);transition:transform .55s cubic-bezier(.7,0,.2,1);}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu a{font-family:var(--fd);font-size:34px;padding:7px 0;}
+.mobile-menu .mlang{margin-top:24px;display:flex;gap:18px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--tomato);}
+
+/* collage hero */
+.hero{padding:clamp(104px,14vh,150px) 0 clamp(50px,7vw,80px);}
+.hero .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center;}
+.hero-left h1{font-size:clamp(50px,8vw,118px);font-weight:500;}
+.hero-left h1 .it{display:block;color:var(--tomato);}
+.hero-left .lead{margin-top:24px;max-width:430px;color:var(--ink-soft);}
+.hero-cta{margin-top:30px;display:flex;gap:13px;flex-wrap:wrap;align-items:center;}
+.hero-rate{margin-top:26px;display:flex;align-items:center;gap:12px;font-size:13px;color:var(--ink-soft);}
+.hero-rate .stars{color:var(--gold);letter-spacing:2px;}
+.hero-rate b{font-family:var(--fd);font-size:20px;color:var(--ink);}
+.hero-collage{position:relative;height:clamp(380px,46vw,540px);}
+.hero-collage .big{position:absolute;top:0;right:0;width:78%;height:80%;border-radius:6px;overflow:hidden;background:#2a1f1a;will-change:clip-path;}
+.hero-collage .small{position:absolute;bottom:0;left:0;width:46%;height:44%;border-radius:6px;overflow:hidden;background:#2a1f1a;box-shadow:0 20px 50px rgba(36,28,24,.2);border:5px solid var(--paper);will-change:clip-path;}
+.hero-collage .pimg{position:absolute;inset:0;background-size:cover;background-position:center;}
+.hb1{background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80');}
+.hb2{background-image:url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=800&q=80');}
+.cta{display:inline-flex;align-items:center;gap:9px;font-family:var(--fb);text-transform:uppercase;font-size:12px;letter-spacing:.14em;padding:15px 28px;border-radius:3px;cursor:pointer;border:1px solid transparent;transition:.35s;}
+.cta.fill{background:var(--tomato);color:#fff;}.cta.fill:hover{background:var(--tomato-d);}
+.cta.ghost{border-color:var(--ink);color:var(--ink);}.cta.ghost:hover{background:var(--ink);color:var(--paper);}
+.cta.wa{background:#1f5e3a;color:#eaf4ec;}.cta.wa:hover{background:#1a4f31;}
+.reveal{opacity:0;transform:translateY(26px);}
+
+.mq-strip{background:var(--basil);color:#fff;overflow:hidden;white-space:nowrap;}
+.mq{display:inline-flex;animation:mq 28s linear infinite;}
+.mq span{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:12px 0;}
+.mq .d{padding:0 20px;opacity:.6;}
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+.stats{padding:clamp(60px,8vh,100px) 0;}
+.stats .row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:center;}
+.stats .st{border-left:1px solid var(--line);padding:6px 18px;}
+.stats .st:first-child{border-left:none;}
+.stats .st .n{font-family:var(--fd);font-size:clamp(40px,5vw,62px);color:var(--tomato);line-height:1;}
+.stats .st .l{margin-top:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+
+.intro{padding:clamp(40px,6vh,70px) 0 clamp(80px,12vh,150px);text-align:center;}
+.intro .wrap{max-width:720px;}
+.intro .rule{width:52px;height:1px;background:var(--gold);margin:0 auto 26px;}
+.intro p{font-family:var(--fd);font-size:clamp(24px,3.4vw,37px);line-height:1.4;}
+.intro p .it{color:var(--tomato);}
+.intro .sig{margin-top:26px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);}
+
+.menu{padding:clamp(80px,12vh,140px) 0;background:var(--ink);color:var(--paper);}
+.menu .head{text-align:center;margin-bottom:52px;}
+.menu .head h2{font-size:clamp(38px,6vw,68px);color:#f4ead7;}
+.menu .head .eyebrow{margin-bottom:16px;color:#e0a86a;}
+.menu-cat{font-family:var(--fd);font-style:italic;font-size:22px;color:var(--gold);margin:34px 0 10px;text-align:center;}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;}
+.dish{padding:18px 0;border-top:1px solid var(--line-d);}
+.dish .top{display:flex;align-items:baseline;gap:12px;}
+.dish h3{font-family:var(--fd);font-size:22px;color:#f4ead7;flex:1;font-weight:500;}
+.dish .dots{flex:1;border-bottom:1px dotted var(--line-d);transform:translateY(-5px);min-width:20px;}
+.dish .tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#e0a86a;white-space:nowrap;}
+.dish p{margin-top:6px;font-size:14px;color:#b6ab9b;}
+
+.story{padding:clamp(80px,12vh,150px) 0;overflow:hidden;}
+.story .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(36px,6vw,82px);align-items:center;}
+.story-fig{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:5/6;background:#2a1f1a;will-change:clip-path;}
+.story-fig .pimg{position:absolute;inset:-8% 0;width:100%;height:116%;background-color:#2a1f1a;background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1100&q=80');background-size:cover;background-position:center;will-change:transform;}
+.story-text h2{font-size:clamp(34px,5vw,58px);margin-bottom:18px;}
+.story-text h2 .it{color:var(--tomato);display:block;}
+.story-text p{margin-bottom:15px;color:var(--ink-soft);}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;}
+.chips span{font-size:11px;padding:7px 15px;border:1px solid var(--line);border-radius:40px;color:var(--ink-soft);}
+
+.gal{padding:clamp(80px,12vh,140px) 0;background:var(--paper-2);}
+.gal .head{text-align:center;margin-bottom:44px;}
+.gal .head h2{font-size:clamp(34px,5vw,58px);margin-top:12px;}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.gtile{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:1/1;background:#2a1f1a;}
+.gtile .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .9s ease;}
+.gtile:hover .bg{transform:scale(1.06);}
+.gtile figcaption{position:absolute;left:0;bottom:0;width:100%;padding:13px;background:linear-gradient(transparent,rgba(20,14,11,.66));color:#fff;font-family:var(--fd);font-style:italic;font-size:16px;opacity:0;transform:translateY(8px);transition:.4s;}
+.gtile:hover figcaption{opacity:1;transform:translateY(0);}
+
+.resv{padding:clamp(84px,12vh,150px) 0;text-align:center;}
+.resv .eyebrow{margin-bottom:16px;}
+.resv h2{font-size:clamp(38px,6vw,70px);margin-bottom:16px;}
+.resv h2 .it{color:var(--tomato);}
+.resv .lead{max-width:540px;margin:0 auto 12px;color:var(--ink-soft);}
+.resv .hours{font-family:var(--fd);font-style:italic;font-size:20px;margin-bottom:34px;}
+.r-actions{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+
+.loc{padding:clamp(80px,12vh,140px) 0;background:var(--paper-2);}
+.loc .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.loc h2{font-size:clamp(32px,5vw,52px);margin-bottom:18px;}
+.loc .addr{font-family:var(--fd);font-size:22px;margin:6px 0 18px;line-height:1.4;}
+.loc p{color:var(--ink-soft);margin-bottom:8px;}
+.loc .maplink{display:inline-block;margin-top:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato);border-bottom:1px solid var(--tomato);padding-bottom:3px;}
+.loc-map{aspect-ratio:5/4;border-radius:6px;overflow:hidden;position:relative;background:linear-gradient(135deg,#e0d6c1,#d2c4a8);}
+.loc-map::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(179,64,43,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(179,64,43,.1) 1px,transparent 1px);background-size:38px 38px;}
+.loc-map .pin{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.loc-map .pin .dot{width:18px;height:18px;border-radius:50%;background:var(--tomato);margin:0 auto 8px;box-shadow:0 0 0 8px rgba(179,64,43,.18);}
+.loc-map .pin span{font-family:var(--fd);font-style:italic;font-size:18px;color:var(--ink);}
+.loc-map .sea{position:absolute;bottom:0;left:0;width:100%;height:38%;background:linear-gradient(180deg,rgba(60,120,140,.3),rgba(40,90,110,.5));}
+.loc-map .sea-label{position:absolute;bottom:14px;right:18px;font-family:var(--fd);font-style:italic;font-size:15px;color:#1d4a5c;}
+
+.footer{background:var(--ink);color:rgba(246,239,226,.72);padding:70px 0 40px;}
+.footer .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:38px;margin-bottom:44px;}
+.footer h4{font-family:var(--fd);font-size:27px;font-style:italic;color:var(--paper);margin-bottom:10px;}
+.footer .tag{font-family:var(--fd);font-style:italic;font-size:16px;color:rgba(246,239,226,.6);}
+.footer .col-t{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.footer a{display:block;font-size:14px;margin-bottom:8px;color:rgba(246,239,226,.72);transition:.3s;}.footer a:hover{color:var(--paper);}
+.footer .bottom{border-top:1px solid rgba(246,239,226,.14);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(246,239,226,.5);}
+
+.panel-ov{position:fixed;inset:0;background:rgba(20,14,11,.5);opacity:0;pointer-events:none;transition:opacity .4s;z-index:198;backdrop-filter:blur(2px);}
+.panel-ov.open{opacity:1;pointer-events:all;}
+.panel{position:fixed;top:0;right:0;height:100svh;width:min(430px,100vw);background:var(--paper);z-index:200;transform:translateX(100%);transition:transform .55s cubic-bezier(.7,0,.2,1);padding:48px clamp(26px,4vw,40px);overflow-y:auto;box-shadow:-20px 0 60px rgba(0,0,0,.25);}
+.panel.open{transform:translateX(0);}
+.panel .px{position:absolute;top:22px;right:24px;background:none;border:none;font-size:26px;cursor:pointer;color:var(--ink);}
+.panel h3{font-size:38px;font-style:italic;margin:12px 0 6px;}
+.panel .psub{font-family:var(--fd);font-style:italic;font-size:18px;color:var(--ink-soft);margin-bottom:26px;}
+.panel .qrow{display:flex;gap:12px;margin-bottom:24px;}
+.panel .qrow a{flex:1;text-align:center;padding:14px;border-radius:3px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;}
+.qrow .qtel{background:var(--tomato);color:#fff;}.qrow .qwa{background:#1f5e3a;color:#eaf4ec;}
+.panel .divr{display:flex;align-items:center;gap:14px;margin:6px 0 22px;color:var(--ink-soft);font-size:11px;letter-spacing:.2em;text-transform:uppercase;}
+.panel .divr::before,.panel .divr::after{content:"";flex:1;height:1px;background:var(--line);}
+.panel label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:16px 0 6px;}
+.panel input,.panel select,.panel textarea{width:100%;padding:12px 14px;border:1px solid var(--line);background:#fff;border-radius:3px;font-family:var(--fb);font-size:15px;color:var(--ink);}
+.panel input:focus,.panel select:focus,.panel textarea:focus{outline:none;border-color:var(--tomato);}
+.panel .submit{width:100%;margin-top:24px;background:var(--ink);color:var(--paper);border:none;padding:16px;border-radius:3px;text-transform:uppercase;letter-spacing:.15em;font-size:12px;cursor:pointer;transition:.3s;font-family:var(--fb);}
+.panel .submit:hover{background:var(--tomato);}
+.panel .pnote{font-size:12px;color:var(--ink-soft);margin-top:14px;text-align:center;}
+
+.mobile-bar{position:fixed;bottom:0;left:0;width:100%;z-index:140;display:none;grid-template-columns:1fr 1fr;}
+.mobile-bar a{padding:15px;text-align:center;color:#fff;text-transform:uppercase;font-size:11px;letter-spacing:.12em;display:flex;align-items:center;justify-content:center;}
+.mobile-bar a.mwa{background:#1f5e3a;}.mobile-bar a.mtel{background:var(--tomato);}
+
+@media(max-width:900px){
+  .nav,.header .lang{display:none;}.burger{display:flex;}.header-right .btn{display:none;}
+  .hero .grid{grid-template-columns:1fr;}.hero-collage{order:-1;height:50vw;min-height:280px;}
+  .stats .row{grid-template-columns:1fr;gap:16px;}.stats .st{border-left:none;border-top:1px solid var(--line);padding-top:16px;}.stats .st:first-child{border-top:none;}
+  .menu-grid,.story .grid,.gal-grid,.loc .grid,.footer .grid{grid-template-columns:1fr;}
+  .mobile-bar{display:grid;}.resv{padding-bottom:120px;}.footer{padding-bottom:90px;}
+}
+@media(max-width:560px){.gal-grid{grid-template-columns:1fr;}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.reveal{opacity:1!important;transform:none!important;}.hero-collage .big,.hero-collage .small,.story-fig{clip-path:none!important;}}
+</style>
+</head>
+<body>
+<header class="header" id="header">
+  <a href="#top" class="brand"><span class="b1">Mamma Mia</span><span class="b2">Pizzeria &amp; restoran · Zadar</span></a>
+  <nav class="nav"><a href="#menu">Jelovnik</a><a href="#story">Priča</a><a href="#gal">Galerija</a><a href="#loc">Lokacija</a></nav>
+  <div class="header-right">
+    <div class="lang"><a href="#" class="active">HR</a><span>·</span><a href="#">EN</a><span>·</span><a href="#">DE</a><span>·</span><a href="#">IT</a></div>
+    <button class="btn" data-open-resv>Rezerviraj</button>
+    <button class="burger" id="burger" aria-label="Izbornik"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#menu">Jelovnik</a><a href="#story">Priča</a><a href="#gal">Galerija</a><a href="#loc">Lokacija</a>
+  <a href="#resv" style="color:var(--tomato)">Rezerviraj</a>
+  <div class="mlang"><a href="#">HR</a><a href="#">EN</a><a href="#">DE</a><a href="#">IT</a></div>
+</div>
+
+<section class="hero" id="top">
+  <div class="wrap"><div class="grid">
+    <div class="hero-left">
+      <span class="eyebrow reveal">Zadar · od 2007.</span>
+      <h1 class="reveal">Pizza, pasta<span class="it">i puno ljubavi.</span></h1>
+      <p class="lead reveal">Omiljena zadarska pizzeria i restoran već više od petnaest godina. Pizza iz peći, domaća pasta i plodovi mora — uz toplinu prave talijanske kuhinje.</p>
+      <div class="hero-cta reveal">
+        <button class="cta fill" data-open-resv>Rezervirajte stol</button>
+        <a href="#menu" class="cta ghost">Jelovnik</a>
+      </div>
+      <div class="hero-rate reveal"><span class="stars">★★★★★</span><b>4.4</b><span>/ preko 1.300 recenzija</span></div>
+    </div>
+    <div class="hero-collage reveal">
+      <div class="big" id="hBig"><div class="pimg hb1"></div></div>
+      <div class="small" id="hSmall"><div class="pimg hb2"></div></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="mq-strip" aria-hidden="true">
+  <div class="mq">
+    <span>PIZZA IZ PEĆI<span class="d">●</span>DOMAĆA PASTA<span class="d">●</span>FRUTTI DI MARE<span class="d">●</span>TIRAMISU<span class="d">●</span>OD 2007.<span class="d">●</span>U SRCU ZADRA<span class="d">●</span></span>
+    <span>PIZZA IZ PEĆI<span class="d">●</span>DOMAĆA PASTA<span class="d">●</span>FRUTTI DI MARE<span class="d">●</span>TIRAMISU<span class="d">●</span>OD 2007.<span class="d">●</span>U SRCU ZADRA<span class="d">●</span></span>
+  </div>
+</div>
+
+<section class="stats">
+  <div class="wrap"><div class="row">
+    <div class="st reveal"><div class="n"><span class="count" data-to="1399">0</span></div><div class="l">recenzija gostiju</div></div>
+    <div class="st reveal"><div class="n"><span class="count" data-to="2007">0</span></div><div class="l">s vama od godine</div></div>
+    <div class="st reveal"><div class="n it" style="font-style:italic">iz peći</div><div class="l">svaka pizza</div></div>
+  </div></div>
+</section>
+
+<section class="intro">
+  <div class="wrap reveal">
+    <div class="rule"></div>
+    <p>Tijesto koje odmara, umak od pravih rajčica i peć koja gori cijeli dan. <span class="it">Kod nas se jede kao kod mame.</span></p>
+    <p class="sig">— Mamma Mia, Zadar</p>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Jelovnik</span><h2>Iz naše kuhinje</h2></div>
+    <p class="menu-cat reveal">Pizza iz krušne peći</p>
+    <div class="menu-grid">
+      <div class="dish reveal"><div class="top"><h3>Margherita</h3><span class="dots"></span></div><p>Rajčica, mozzarella i svježi bosiljak — klasik nad klasicima.</p></div>
+      <div class="dish reveal"><div class="top"><h3>Mamma Mia</h3><span class="dots"></span><span class="tag">Signature</span></div><p>Naša potpisna: pršut, rikola, tartuf i parmezan.</p></div>
+      <div class="dish reveal"><div class="top"><h3>Capricciosa</h3><span class="dots"></span></div><p>Šunka, gljive, artičoke i masline.</p></div>
+      <div class="dish reveal"><div class="top"><h3>Frutti di mare</h3><span class="dots"></span></div><p>Plodovi mora, češnjak i peršin.</p></div>
+    </div>
+    <p class="menu-cat reveal">Pasta &amp; više</p>
+    <div class="menu-grid">
+      <div class="dish reveal"><div class="top"><h3>Spaghetti frutti di mare</h3><span class="dots"></span></div><p>Špageti s plodovima mora u laganom umaku.</p></div>
+      <div class="dish reveal"><div class="top"><h3>Tagliatelle al tartufo</h3><span class="dots"></span><span class="tag">Hit</span></div><p>Domaća tjestenina s tartufom i vrhnjem.</p></div>
+      <div class="dish reveal"><div class="top"><h3>Lasagne</h3><span class="dots"></span></div><p>Slojevite lazanje s bolognese umakom.</p></div>
+      <div class="dish reveal"><div class="top"><h3>Gnocchi Gorgonzola</h3><span class="dots"></span></div><p>Domaći njoki u umaku od gorgonzole.</p></div>
+      <div class="dish reveal"><div class="top"><h3>Carpaccio</h3><span class="dots"></span></div><p>Tanki listići govedine, rikola i parmezan.</p></div>
+      <div class="dish reveal"><div class="top"><h3>Tiramisu</h3><span class="dots"></span><span class="tag">Desert</span></div><p>Klasični talijanski desert, domaći recept.</p></div>
+    </div>
+    <p class="menu-note reveal" style="text-align:center;margin-top:46px;font-family:var(--fd);font-style:italic;font-size:19px;color:#cec1ad">Cijeli jelovnik i dnevne ponude — pitajte osoblje ili nas nazovite.</p>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap"><div class="grid">
+    <div class="story-fig reveal"><div class="pimg" id="storyP"></div></div>
+    <div class="story-text reveal">
+      <span class="eyebrow">Naša priča</span>
+      <h2>Komad Italije <span class="it">u srcu Zadra</span></h2>
+      <p>Mamma Mia otvorila je vrata 2007. i od tada je jedno od najomiljenijih okupljališta Zadrana i gostiju. Tijesto pripremamo svaki dan, umake kuhamo polako, a pizzu pečemo u pravoj peći.</p>
+      <p>Preko 1.300 recenzija i bezbroj ponovljenih posjeta — najbolja preporuka koju možemo dobiti. Dođite i postanite dio priče.</p>
+      <div class="chips"><span>Od 2007.</span><span>Pizza iz peći</span><span>Domaća pasta</span><span>Plodovi mora</span><span>U centru Zadra</span></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="gal" id="gal">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Galerija</span><h2>S našeg stola</h2></div>
+    <div class="gal-grid">
+      <figure class="gtile reveal"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80')"></div><figcaption>Pizza iz peći</figcaption></figure>
+      <figure class="gtile reveal"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80')"></div><figcaption>Domaća pasta</figcaption></figure>
+      <figure class="gtile reveal"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=900&q=80')"></div><figcaption>Iz krušne peći</figcaption></figure>
+      <figure class="gtile reveal"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80')"></div><figcaption>Naš stol</figcaption></figure>
+      <figure class="gtile reveal"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=900&q=80')"></div><figcaption>Frutti di mare</figcaption></figure>
+      <figure class="gtile reveal"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80')"></div><figcaption>Tiramisu</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="resv" id="resv">
+  <div class="wrap reveal">
+    <span class="eyebrow">Rezervacije</span>
+    <h2>Sjednite <span class="it">za naš stol</span></h2>
+    <p class="lead">Nazovite, pišite na WhatsApp ili e-mail — za večere i veće društvo rado ćemo vam čuvati mjesto.</p>
+    <p class="hours">Otvoreno svaki dan · Govorimo HR · EN · DE · IT</p>
+    <div class="r-actions">
+      <a href="tel:+38523334246" class="cta fill">Nazovite · +385 23 334 246</a>
+      <a href="https://wa.me/38523334246" class="cta wa" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="cta ghost" data-open-resv>Pošaljite upit</button>
+    </div>
+  </div>
+</section>
+
+<section class="loc" id="loc">
+  <div class="wrap"><div class="grid">
+    <div class="reveal">
+      <span class="eyebrow">Lokacija</span>
+      <h2>U Zadru</h2>
+      <p class="addr">Zadar<br>Zadarska županija, Hrvatska</p>
+      <p>U srcu grada, nadomak povijesne jezgre, Morskih orgulja i zadarskih zalazaka sunca. Lako dostupno pješice.</p>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Mamma+Mia+pizzeria+Zadar" target="_blank" rel="noopener">Otvori u Google Maps →</a>
+    </div>
+    <div class="loc-map reveal" aria-hidden="true">
+      <div class="pin"><div class="dot"></div><span>Mamma Mia</span></div>
+      <div class="sea"></div><div class="sea-label">Jadransko more</div>
+    </div>
+  </div></div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="grid">
+      <div><h4>Mamma Mia</h4><p class="tag">Pizza, pasta i puno ljubavi — od 2007.</p><p style="font-size:13px;margin-top:14px">Pizzeria i restoran u srcu Zadra · preko 1.300 recenzija gostiju.</p></div>
+      <div><p class="col-t">Kontakt</p><a href="tel:+38523334246">+385 23 334 246</a><a href="mailto:mammamiazadar2007@gmail.com">mammamiazadar2007@gmail.com</a><a href="https://wa.me/38523334246" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div><p class="col-t">Pratite nas</p><a href="https://www.facebook.com/search/top?q=mamma%20mia%20pizzeria%20zadar" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/explore/search/keyword/?q=mamma%20mia%20zadar" target="_blank" rel="noopener">Instagram</a><p class="tag" style="margin-top:14px;font-size:13px">HR · EN · DE · IT</p></div>
+    </div>
+    <div class="bottom"><span>© <span id="yr"></span> Mamma Mia, Zadar</span><span>Pizzeria &amp; restoran · od 2007.</span></div>
+  </div>
+</footer>
+
+<div class="panel-ov" id="panelOv"></div>
+<aside class="panel" id="panel" aria-label="Rezervacija">
+  <button class="px" data-close-resv aria-label="Zatvori">×</button>
+  <span class="eyebrow">Rezervacija stola</span>
+  <h3>Javite se</h3>
+  <p class="psub">Odgovaramo osobno — javite nam termin i broj gostiju.</p>
+  <div class="qrow"><a href="tel:+38523334246" class="qtel">Nazovi</a><a href="https://wa.me/38523334246" class="qwa" target="_blank" rel="noopener">WhatsApp</a></div>
+  <div class="divr">ili pošaljite upit</div>
+  <form id="resvForm">
+    <label for="rn">Ime i prezime</label><input id="rn" type="text" required placeholder="Vaše ime" />
+    <label for="rd">Datum &amp; vrijeme</label><input id="rd" type="text" placeholder="npr. 18.7. u 20h" />
+    <label for="rp">Broj gostiju</label><select id="rp"><option>2 osobe</option><option>3 osobe</option><option>4 osobe</option><option>5–6 osoba</option><option>7+ osoba</option></select>
+    <label for="rm">Poruka</label><textarea id="rm" rows="3" placeholder="Posebne želje, stol na terasi…"></textarea>
+    <button type="submit" class="submit">Pošalji upit putem WhatsAppa</button>
+    <p class="pnote">Otvara WhatsApp s vašim upitom — potvrdu šaljemo osobno.</p>
+  </form>
+</aside>
+
+<div class="mobile-bar">
+  <a href="tel:+38523334246" class="mtel">Nazovi</a>
+  <a href="https://wa.me/38523334246" class="mwa" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var header=document.getElementById('header');
+function onS(){header.classList.toggle('scrolled',window.scrollY>40);}onS();window.addEventListener('scroll',onS,{passive:true});
+var burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+burger.addEventListener('click',function(){mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open');document.body.style.overflow='';});});
+var panel=document.getElementById('panel'),pov=document.getElementById('panelOv');
+function op(){panel.classList.add('open');pov.classList.add('open');document.body.style.overflow='hidden';}
+function cl(){panel.classList.remove('open');pov.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('[data-open-resv]').forEach(function(b){b.addEventListener('click',op);});
+document.querySelectorAll('[data-close-resv]').forEach(function(b){b.addEventListener('click',cl);});
+pov.addEventListener('click',cl);document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});
+document.getElementById('resvForm').addEventListener('submit',function(e){e.preventDefault();
+  var n=document.getElementById('rn').value||'',d=document.getElementById('rd').value||'',p=document.getElementById('rp').value||'',m=document.getElementById('rm').value||'';
+  var t='Pozdrav Mamma Mia! Rezervacija stola.%0AIme: '+encodeURIComponent(n)+'%0ATermin: '+encodeURIComponent(d)+'%0AGostiju: '+encodeURIComponent(p)+(m?'%0ANapomena: '+encodeURIComponent(m):'');
+  window.open('https://wa.me/38523334246?text='+t,'_blank');});
+if(window.gsap){gsap.registerPlugin(ScrollTrigger);
+  if(!reduce&&window.Lenis){var lenis=new Lenis({duration:1.2,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},smoothWheel:true});
+    gsap.ticker.add(function(t){lenis.raf(t*1000);});gsap.ticker.lagSmoothing(0);lenis.on('scroll',ScrollTrigger.update);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-60});}});});}
+  if(!reduce){
+    [['#hBig'],['#hSmall'],['.story-fig']].forEach(function(p,i){var f=document.querySelector(p[0]);if(!f)return;
+      gsap.fromTo(f,{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.2,ease:'power3.inOut',delay:i*.12,scrollTrigger:{trigger:f,start:'top 90%'}});});
+    gsap.to('#storyP',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'.story',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.utils.toArray('.gal-grid .gtile').forEach(function(el,i){gsap.fromTo(el,{opacity:0,y:24,scale:.96},{opacity:1,y:0,scale:1,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'.gal-grid',start:'top 86%'},delay:(i%3)*.07});});
+    gsap.utils.toArray('.reveal').forEach(function(el){if(el.closest('.gal-grid'))return;
+      gsap.fromTo(el,{opacity:0,y:26},{opacity:1,y:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%'}});});
+    gsap.utils.toArray('.count').forEach(function(el){var to=+el.getAttribute('data-to'),o={v:0};
+      gsap.to(o,{v:to,duration:1.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true},onUpdate:function(){el.textContent=Math.round(o.v);}});});
+  }
+}
+</script>
+</body>
+</html>
